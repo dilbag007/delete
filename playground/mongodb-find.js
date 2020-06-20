@@ -3,7 +3,7 @@ const { MongoClient, ObjectID } = require("mongodb");
 const URL = "mongodb://localhost:27017";
 var dbName = "test";
 
-MongoClient.connect(URL, (err, db) => {
+MongoClient.connect(URL, { useUnifiedTopology: true }, (err, db) => {
     if (err) {
         return console.log("Unable to connect to Database");
     }
